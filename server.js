@@ -8,6 +8,7 @@ const User = require('./models/user');
 
 const app = express();
 
+
 // connect to db
 mongoose
     .connect(process.env.DATABASE, {
@@ -23,6 +24,15 @@ mongoose
 
 // import routes
 const authRoutes = require('./routes/auth');
+
+/**
+ * setting up the cors policy
+ */
+
+ app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+  });
 
 // app middlewares
 app.use(morgan('dev'));
