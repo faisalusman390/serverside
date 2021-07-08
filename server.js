@@ -40,7 +40,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json()) 
 // app.use(cors()); // allows all origins
 if ((process.env.NODE_ENV = 'development')) {
-    app.use(cors({ origin: `https://morning-woodland-52410.herokuapp.com` }));
+    app.use(cors({ origin: `http://localhost:3000` }));
 }
 
 
