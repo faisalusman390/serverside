@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const cors = require('cors');
+// const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -29,10 +29,9 @@ const authRoutes = require('./routes/auth');
  * setting up the cors policy
  */
 
- app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
+ var cors = require('cors')
+
+ app.use(cors())
 
 // app middlewares
 app.use(morgan('dev'));
